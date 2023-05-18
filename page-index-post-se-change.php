@@ -1,0 +1,101 @@
+<?php
+/**
+ * The index page template file
+ * 
+ * @package bootstrap-basic
+ */
+
+get_header();
+
+/**
+ * determine main column size from active sidebar
+ */
+$main_column_size = bootstrapBasicGetMainColumnSize();
+?>
+
+<div class="content-area home-page" id="main-column">
+	<main id="main" class="site-main" role="main">
+		<div id="wlu-discovery-and-links" class="row">
+			<div class="col-xs-12 col-md-12 col-lg-10 col-xl-8 col-md-offset-0 col-lg-offset-1 col-xl-offset-2 discovery-search" id="discovery-search">
+				<div class="col-xs-10">
+					<?php the_widget( 'WLU_Primo_Widget' ); ?>
+				</div>
+				<div class="col-xs-2">
+					<div class="primo-advanced-search"><a target="_blank" href="https://wlu.primo.exlibrisgroup.com/discovery/search?vid=01WLU_INST:01WLU&sortby=rank&mode=advanced&lang=en">Advanced Search</a></span>
+					<div><a href="https://wlu.primo.exlibrisgroup.com/discovery/login?vid=01WLU_INST:01WLU&lang=en">My Library Account</a></span>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-12 col-lg-10 col-xl-8 col-md-offset-0 col-lg-offset-1 col-xl-offset-2" id="home-navigation">
+				<div class="col-xs-12 col-md-12 home-nav-menu" id="menu-research">
+					<!-- <h3>Research</h3> -->
+					<div class='col-xs-4 research-link'>
+						<a href="/research">
+							<div class='research-link-image rli-research-help'></div>
+							<div class='research-link-desc'>
+								<h4>Research Help</h4>
+							</div>
+						</a>
+					</div>
+					<div class='col-xs-4 research-link'>
+						<a href="http://libguides.wlu.edu/az.php">
+							<div class='research-link-image rli-atoz'></div>
+							<div class='research-link-desc'>
+								<h4>A-Z Databases List</h4>
+							</div>
+						</a>
+					</div>
+					<div class='col-xs-4 research-link'>
+						<a href="/services">
+							<div class='research-link-image rli-services'></div>
+							<div class='research-link-desc'>
+								<h4>Library Services</h4>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-12 home-nav-menu" id="menu-services">
+					<div class='col-xs-4 research-link'>
+						<a href="http://libguides.wlu.edu">
+							<div class='research-link-image rli-subject-guide'></div>
+							<div class='research-link-desc'>
+								<h4>Subject &amp; Course Guides</h4>
+							</div>
+						</a>
+					</div>
+					<div class='col-xs-4 research-link'>
+						<a href="/research/full-text-journal-list">
+							<div class='research-link-image rli-journals'></div>
+							<div class='research-link-desc'>
+								<h4>A-Z Journals List</h4>
+							</div>
+						</a>
+					</div>
+					<div class='col-xs-4 research-link'>
+						<a href="http://library.wlu.edu/scholar">
+							<div class='research-link-image rli-scholar'></div>
+							<div class='research-link-desc'>
+								<h4>W&amp;L Scholarly Works</h4>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="wlu-news-and-events" class="row">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-1 col-xl-offset-2" id="news-and-events-box">
+				<div id="bloggery-feed" class="col-xs-12 col-sm-6 col-md-12">
+					<?php the_widget( 'WP_Widget_RSS', array('title' => 'News &amp; Events', 'url' => 'http://library.wlu.edu/libnews/feed', 'items' => 5, 'show_date' => false) ); ?>
+				</div>
+				<div id="twitter-feed" class="col-xs-12 col-sm-6 col-md-12">
+					<h2>Tweets @WLULibrary</h2>
+					<a class="twitter-timeline" href="https://twitter.com/WLULibrary" data-widget-id="621304973905784832" data-chrome="noheader nofooter noborders noscrollbar transparent" data-tweet-limit="3" data-link-color="#35488D" data-width="520" data-height="500">Tweets by @WLULibrary</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div>
+			</div>			
+			<div class="col-xs-12 col-sm-12 col-md-7 col-lg-6 col-xl-4 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 wlu-jumbotron" id="wlupubs-box">
+				<?php echo do_shortcode( '[cycloneslider id="home-slider-2"]' ); ?>
+				<!-- <div id="countdown-to-alma"><iframe src="http://www.arewethere.yt/New-library-search-platform-launch/78636.htm?type=embed" frameborder="0"></iframe></div> -->
+			</div>			
+		</div>
+	</main>
+</div>
+<?php get_footer(); ?>

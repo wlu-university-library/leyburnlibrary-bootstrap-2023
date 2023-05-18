@@ -1,0 +1,16 @@
+<link type="text/css" rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://library.wlu.edu/sersol/iframeResizer.contentWindow.min.js"></script>
+<link rel='stylesheet' id='sliding-panel-css' href='http://libdev.wlu.edu/wp-content/plugins/sliding-panel/css/sliding-panel.css' type='text/css' media='all' />
+<link rel="stylesheet" href="http://libdev.wlu.edu/wp-content/themes/leyburnlibrary-bootstrap/style.css" />
+<!-- <link rel="stylesheet" type="text/css" href="http://library.wlu.edu/sersol/EJournalPortal.css"> -->
+<link rel="icon" type="image/x-icon" href="http://library.wlu.edu/favicon.ico">
+
+<div id="wlu-sersol-header"></div>
+
+<div id="content" class="site-content"> 
+<div id="wlu-content" class="row">
+	<div class="col-xs-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2 content-area subpages" id="wlu-main-column">
+		<main id="main" class="site-main" role="main">

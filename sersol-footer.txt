@@ -1,0 +1,15 @@
+		</main>
+	</div>
+</div>
+
+			</div><!--.site-content-->
+			
+
+<!--FOOTER BEGIN-->
+<div id='wlu-sersol-footer'></div>	
+	
+	<!--END FOOTER-->
+	<script type='text/javascript'>/* <![CDATA[ */	var sp_l10n = {'open':'Help and Information <span class="glyphicon glyphicon-info-sign"></span>', 'close':'Close <span class="glyphicon glyphicon-remove"></span>'}; /* ]]> */</script>
+	<script type='text/javascript' src='http://libdev.wlu.edu/wp-content/plugins/sliding-panel/js/sliding-panel.js?ver=3.9.2'></script>
+	<script type="text/javascript" charset="utf-8" src='http://library.wlu.edu/sersol/wlu-sersol.js'></script>
+	<script type='text/javascript' src='http://libdev.wlu.edu/wp-content/themes/leyburnlibrary-bootstrap/wlu-local.js'></script>

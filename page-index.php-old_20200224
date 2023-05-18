@@ -1,0 +1,473 @@
+<?php
+/**
+ * The index page template file
+ * 
+ * @package bootstrap-basic
+ */
+
+get_header();
+
+/**
+ * determine main column size from active sidebar
+ */
+$main_column_size = bootstrapBasicGetMainColumnSize();
+?>
+
+<div class="content-area home-page" id="main-column">
+	<main id="main" class="site-main" role="main">
+		<div id="wlu-discovery-and-links" class="row">
+ 		    <div id="search-and-fastfinds" class="col-xs-12 col-md-8 col-lg-6 col-xl-5 col-lg-offset-1 col-xl-offset-2">
+			<div class="col-xs-12 discovery-search" id="discovery-search">
+				<div class="col-xs-12" style="z-index: 900;">
+					<?php the_widget( 'WLU_Primo_Widget_2020' ); ?>
+				</div>
+			</div>
+			<div class="col-xs-12" id="home-navigation">
+			        <h2>Fast Finds</h2>
+				<div class="col-xs-12 home-nav-menu" id="menu-research">
+					<div class='col-xs-2 research-link'>
+						<a href="http://libguides.wlu.edu/az.php">
+							<div class='research-link-image rli-database-list'></div>
+							<div class='research-link-desc'>
+								<h4>Database<br>List</h4>
+							</div>
+						</a>
+					</div>
+					<div class='col-xs-2 research-link'>
+						<a href="https://wlu.primo.exlibrisgroup.com/discovery/jsearch?vid=01WLU_INST:01WLU&sortby=rank&lang=en">
+							<div class='research-link-image rli-journal-list'></div>
+							<div class='research-link-desc'>
+								<h4>Journal<br>Search</h4>
+							</div>
+						</a>
+					</div>
+					<div class='col-xs-2 research-link'>
+						<a href="https://library.wlu.edu/about/library-directory/">
+							<div class='research-link-image rli-staff-list'></div>
+							<div class='research-link-desc'>
+								<h4>Staff<br>Directory</h4>
+							</div>
+						</a>
+					</div>
+					<div class='col-xs-2 research-link'>
+						<a href="https://library.wlu.edu/services/roomreservations/">
+							<div class='research-link-image rli-room-booking'></div>
+							<div class='research-link-desc'>
+								<h4>Room<br>Reservations</h4>
+							</div>
+						</a>
+					</div>
+					<div class='col-xs-2 research-link'>
+						<a href="https://library.wlu.edu/research/zotero/">
+							<div class='research-link-image rli-zotero'></div>
+							<div class='research-link-desc'>
+								<h4>Zotero</h4>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+                    </div>
+		    <div class="col-xs-12 col-md-4 col-lg-4 col-xl-3" style="padding-left: 15px">
+		    <?php
+			$wlulh = new WLU_Library_Hours();
+			echo $wlulh->show_text();
+		    ?>
+		    </div>
+		    <div class="col-xs-12 col-md-4 col-lg-4 col-xl-3 current-exhibits">
+			<h2>Exhibits</h2>
+			<?php echo do_shortcode( '[do_widget id=ai1ec_agenda_widget-3]' ); ?>
+		    </div>
+		</div>
+		<div id="wlu-news-and-events" class="row">
+			<div class="col-xs-12 col-md-8 col-lg-6 col-xl-5 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-1 col-xl-offset-2" id="news-and-events-box">
+				<div id="bloggery-feed" class="col-xs-12">
+					<div>
+						<h2>Upcoming Events</h2>
+						<?php echo do_shortcode( '[do_widget id=ai1ec_agenda_widget-2]' ); ?>
+						<div class="calbtn">
+							<a class="btn btn-primary" href="https://library.wlu.edu/calendar/">More Events...</a>
+						</div>
+					</div>
+					<?php the_widget( 'WP_Widget_RSS', array('title' => 'The Blog', 'url' => 'https://library.wlu.edu/libnews/feed', 'items' => 3, 'show_date' => false) ); ?>
+					<div class="calbtn">
+						<a class="btn btn-primary" href="https://library.wlu.edu/libnews/">More Posts...</a>
+					</div>
+					<style type="text/css" rel="stylesheet">
+						body {
+						  font-family: "Overpass";
+						}
+
+						#content {
+							outline: none;
+						}
+
+						#responsive-header-menu, #header-menu, #header-menu-mobile, #header-menu-mobile-container {
+						  text-shadow: none;
+						  background: #0076a8;
+						}
+
+						.wlu-jumbotron .cycloneslider {
+    							margin: 0px;
+
+						}
+
+						.timely {
+							font-family: inherit;
+							font-size: inherit;
+						}
+
+						.ai1ec-agenda-widget-view {
+							max-width: 99%;
+						}
+
+						.ai1ec-agenda-widget-view .ai1ec-date {
+							padding: .75em 0;
+							background: inherit;
+							border-top: none;
+						}
+
+						.ai1ec-agenda-widget-view .ai1ec-date.ai1ec-today, .ai1ec-agenda-view .ai1ec-date.ai1ec-today {
+    							background: rgba(153, 214, 234, .25);
+							border-top: none;
+						}
+					
+						.calbtn {
+							max-width:  98%;
+    							text-align: right;
+    							margin: .5em 0;
+						}
+
+						.calbtn a {
+							width: 120px;
+    							background: #0076a8;
+    							border: 1px solid #0076a8;
+							border-radius: 0;
+						}
+						
+						#sb_instagram .sbi_follow_btn a {
+    							background: #0076a8;
+    							color: #fff;
+						}
+
+						#sb_instagram #sbi_load .sbi_load_btn, #sb_instagram .sbi_follow_btn a {
+							border-radius: 0;
+						}
+
+						.fa-calendar {
+							display: none;
+						}
+
+						.widget_rss {
+							margin-top: 2em;
+						}
+
+						.widget_rss li {
+							padding: .25em 30px;
+						}
+
+						.widget_rss .widgettitle a:hover {
+							text-decoration: none;
+							cursor: text;
+						}
+
+						.research-link-desc h4 {
+							font-size: .9em;
+							text-align: center;
+						}
+
+						#wlulhbox {
+					    		color: #000;
+    							letter-spacing: .5px;
+    							width: 100%;
+							margin-top: 25px;
+							padding-top: 5px;
+						}
+
+						#wlulhbox h2 {
+							line-height: 1.5em;
+							margin-top: .5em;
+							font-size: 30px;
+						}
+
+						#wlulhbox td {
+							border-top: none;
+						}
+
+						body.custom-background {
+	    						background-color: #f8f9fd;
+						}
+
+						#wlu-discovery-and-links {
+							background-color: inherit; 
+						}
+
+						#wlu-news-and-events {
+							background: inherit;
+							margin-top: 1em;
+						}
+
+						.discovery-search, #home-navigation {
+							border: none;
+							margin-bottom: 0;
+						}
+		
+						#home-navigation {
+							padding: 25px 15px 15px;
+						}
+
+						.research-link {
+							border: none;
+							background: inherit;
+							padding: 0;
+							width: 16.66666667%;
+							margin: 1.5%;
+						}
+
+						.research-link-image {
+							height: 100%;
+							background-color: #fff;
+						}
+
+						#news-and-events-box {
+							padding: 0 15px;
+						}
+
+						#primo-input-box-2020 .input-group-btn .glyphicon-search {
+							height: 44.35px;
+							border-radius: 0;
+    							border: 1px solid #0076a8;
+						}
+				
+						#primo-input-box-2020 #primoQueryTemp2020 {
+							margin-top: 4px;
+							height: 44.35px;
+							border-radius: 0;
+						}
+
+						#primoQueryTemp2020::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  							color: #555;
+  							opacity: 1; /* Firefox */
+						}
+
+						#primoQueryTemp2020:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  							color: #555;
+						}
+						
+						#primoQueryTemp2020::-is-input-placeholder { /* Microsoft Edge */
+  							color: #555;
+						}
+
+						#primo-input-box-2020 {
+							background-color: #ddd;
+							padding: 1em 1em .25em;
+						}
+
+						#primo-input-box-2020 .list-group {
+							margin-top: 4px;
+						}
+
+						#primo-input-box-2020 a {
+							border-radius: 0;
+						}
+
+						#primo-input-box-2020 .active {
+							background: #0076a8;
+						}
+
+						#primo-input-box-2020 button.glyphicon-search {
+							background: #0076a8;
+						}
+
+						.primo-element {
+							height: 44px;
+							line-height: 44px;
+						}
+
+						.primo-explanation {
+							font-style: italic;
+							color: #444;
+						}
+			
+						.primo-links a {
+							border-bottom: 1px solid #000;
+						}
+
+						.primo-links a:hover {
+							color: blue;
+							text-decoration: none;
+						}
+
+						.rli-database-list {
+  						  	background-image: url(/wp-content/uploads/2019/11/jstor2.png);
+    							background-position: center;
+							background-size: contain;
+						}
+
+						.rli-journal-list {
+    							background-image: url(/wp-content/uploads/2020/01/ste.png);
+    							background-position: center center;
+    							background-size: contain;
+						}
+
+						.rli-staff-list {
+							background-position: center 25%;
+							background-size: cover;
+						}
+
+						.rli-room-booking {
+    							background-image: url(/wp-content/uploads/2020/01/reservations.jpg);
+    							background-size: cover;
+							background-position: 25% center;
+						}
+
+						.rli-zotero {
+    							background-image: url(/wp-content/uploads/2019/12/zotero.png);
+    							background-position: center;
+    							background-size: contain;
+						}
+
+						.instagram-widget {
+							padding-left: 15px;
+						}
+
+						#univ-footer-site-search {
+    							margin-bottom: 20px;
+							margin-top: 0;
+						}
+
+						#univ-footer-site-search div:last-of-type div:last-of-type {
+							text-align: right;
+						}
+
+						.footer-text {
+    							margin: 0 0 1em;
+						}
+
+
+						.fdlp-container {
+							text-align: right;
+						}
+
+						.fdlp-logo {
+							position: static;
+						}
+
+						.current-exhibits {
+							padding-left: 15px;
+						}
+
+						#ai1ec_agenda_widget-3 .ai1ec-date-title {
+							display: none;
+						}
+
+						#ai1ec_agenda_widget-3 .ai1ec-agenda-widget-view .ai1ec-event {
+							margin: 0;
+						}
+
+						#ai1ec_agenda_widget-3 .ai1ec-popup-trigger {
+							display: none;
+						}
+
+						#ai1ec_agenda_widget-3 .ai1ec-popover {
+							display: block !important;
+							position: static;
+							max-width: max-content;
+							padding: 10px;
+    							background: transparent;
+    							border: none;
+    							-webkit-box-shadow: none;
+    							box-shadow: none;
+						}
+		
+						#ai1ec_agenda_widget-3 .ai1ec-popover.ai1ec-popup {
+							width: 100%;
+						}
+
+						#ai1ec_agenda_widget-3 .ai1ec-event-location {
+							display: block;
+						}
+
+						#ai1ec_agenda_widget-3 .post-edit-link {
+							display: none;
+						}
+
+						#ai1ec_agenda_widget-3 .ai1ec-allday-badge {
+							display: none;
+						}
+
+
+						#ai1ec_agenda_widget-3 .ai1ec-popup-title {
+							font-size: inherit;
+							font-weight: normal;
+						}	
+
+						#ai1ec_agenda_widget-3 .ai1ec-event-time {
+							font-weight: normal;
+						}
+
+						#ai1ec_agenda_widget-3 .ai1ec-agenda-widget-view .ai1ec-date {
+							padding: 0;
+						}
+
+						.gsc-search-box-tools .gsc-search-box .gsc-input {
+    							height: 27px;
+    							padding-right: 0px;
+						}
+
+						.gsc-search-button-v2, .gsc-search-button-v2:hover, .gsc-search-button-v2:focus {
+    							border-color: #0076a8;
+    							margin-left: 0;
+    							border-radius: 0;
+							background-color: #0076a8;
+						}
+	
+						@media screen and (max-width: 510px) {
+							.research-link {
+								height: auto;
+								min-height: auto;
+							}
+	
+							.research-link-image {
+								height: 75px;
+							}
+						}
+					</style>
+				</div>
+			</div>			
+			<div class="col-xs-12 col-md-4 col-lg-4 col-xl-3 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 instagram-widget">
+				<h2>@WLULibrary <i class="fa fa-instagram"></i></h2>
+				<div class="instagram-feed">
+					<?php echo do_shortcode( '[instagram-feed]' ); ?>
+				</div>
+			</div>			
+			<script>
+				jQuery(document).ready(function($) {
+					$(".widget_rss .widgettitle a").click(function() {
+						return false;
+					});
+
+					var dblist = ["/wp-content/uploads/2019/12/project-muse_rgb-1-e1576005458209.png", "/wp-content/uploads/2019/11/jstor2-e1576005543406.png"];
+
+					var journallist = ["/wp-content/uploads/2019/12/nejmID_preferred_RGB_JPG-e1578492610259.jpg", "/wp-content/uploads/2019/12/Journal-of-Cerebral-Blood-Flow-Metabolism.png", "/wp-content/uploads/2019/12/Journal-of-Marketing.png", "/wp-content/uploads/2019/12/The-American-Journal-of-Sports-Medicine.png", "/wp-content/uploads/2020/01/chb.png", "/wp-content/uploads/2020/01/lancet.png", "/wp-content/uploads/2020/01/ste.png"];
+
+					var stafflist = ["/wp-content/uploads/2019/12/MoatazKhalifa_nd.jpg", "/wp-content/uploads/2019/12/PaulaKiser_nd.jpg", "/wp-content/uploads/2019/12/kane.jpeg", "/wp-content/uploads/2019/12/Mary-Abdoney_10_29_2019.png", "/wp-content/uploads/2019/12/ElizabethTeaff_10_29_2019.jpg", "/wp-content/uploads/2019/12/Jeff-Barry_10_29_2019.jpg", "/wp-content/uploads/2014/08/tom_camden.jpg", "/wp-content/uploads/2014/08/jason_mickel.jpg", "/wp-content/uploads/2019/12/Mackenzie-Brooks_10_29_2019.jpg", "/wp-content/uploads/2014/08/john_tombarge.jpg", "/wp-content/uploads/2019/12/EmilyCook_10_29_2019-1.jpg", "/wp-content/uploads/2014/08/dick_grefe.jpg", "/wp-content/uploads/2019/12/SydneyBufkin_nd.jpg"];
+
+					var randpic = stafflist[Math.floor(Math.random()*stafflist.length)];
+					$(".rli-staff-list").css("background-image", "url(" + randpic + ")");
+
+					var randpic = journallist[Math.floor(Math.random()*journallist.length)];
+					$(".rli-journal-list").css("background-image", "url(" + randpic + ")");
+
+					var randpic = dblist[Math.floor(Math.random()*dblist.length)];
+					$(".rli-database-list").css("background-image", "url(" + randpic + ")");
+
+					$("#ai1ec_agenda_widget-3 .ai1ec-popover").removeClass("ai1ec-popup");
+				});
+				
+			</script>
+		</div>
+	</main>
+</div>
+<!-- php get_footer();  -->
+<?php require("footer2020.php"); ?>

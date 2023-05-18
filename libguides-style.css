@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Overpass:400,400i,700,700i);
+
+body {
+	font-family: "Overpass", Helvetica, Arial, sans-serif ;
+	font-size: 1rem;
+	word-spacing: 1px;
+	letter-spacing: .02em;
+	font-smooth: always;
+	-webkit-font-smoothing: subpixel-antialiased;
+	line-height: 1.42857;
+}
+#s-lib-public-header-title {
+	font-size: 2rem;
+}
+
+#s-lib-public-main #col1 {
+	padding-left: 0px ;
+	padding-right: 10px ;
+}
+
+#s-lib-public-main #col2 {
+	padding-left: 10px ;
+	padding-right: 0px ;	
+}
+
+#s-lib-public-main .row {
+	margin: 0px;
+}
+
+#s-lg-guide-main {
+	padding-top: 0px;
+	padding-left: 25px;
+}
+
+#form-group-s-lg-guide-order {
+	width: 300px;
+	margin-right: 0px;
+}
+
+#form-group-s-lg-guide-order label {
+	text-align: left;
+}
+
+#s-lg-hp-nav-bottom .form-group {
+	width: auto;
+}
+
+.s-lg-public-search-field {
+	width: auto;
+}
+
+#s-lg-hp-nav-bottom form {
+	text-align: center;
+}
+
+#s-lg-hp-nav-bottom .form-group {
+	width: 75%;
+}
+
+#s-lg-guide-search {
+	width: 100%;
+}
+
+#s-lg-hp-nav-bottom .pull-right {
+	float: none !important;
+}
